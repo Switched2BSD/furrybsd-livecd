@@ -31,20 +31,8 @@ if [ ! -f "/usr/local/bin/git" ] ; then
   exit 1
 fi
 
-case $desktop in
-  'kde')
     export desktop="kde"
     export edition="KDE"
-    ;;
-  'gnome')
-    export desktop="gnome"
-    export edition="GNOME"
-    ;;
-  *)
-    export desktop="xfce"
-    export edition="XFCE"
-    ;;
-esac
 
 vol="FuryBSD-${version}-${edition}"
 label="FURYBSD"
@@ -155,20 +143,7 @@ user()
 }
 
 dm()
-{
-  case $desktop in
-    'kde')
       cp ${cwd}/sddm.conf ${uzip}/usr/local/etc/
-      ;;
-    'gnome')
-      cp ${cwd}/custom.conf $[uzip}/usr/local/etc/gdm/
-      ;;
-    *)
-      cp ${cwd}/lightdm.conf ${uzip}/usr/local/etc/lightdm/
-      chroot ${uzip} sed -i '' -e 's/memorylocked=128M/memorylocked=256M/' /etc/login.conf
-      chroot ${uzip} cap_mkdb /etc/login.conf
-      ;;
-  esac
 }
 
 uzip() 
@@ -186,7 +161,7 @@ ramdisk()
   touch "${ramdisk_root}/etc/fstab"
   cp ${uzip}/etc/login.conf ${ramdisk_root}/etc/login.conf
   makefs -b '10%' "${cdroot}/data/ramdisk.ufs" "${ramdisk_root}"
-  gzip "${cdroot}/data/ramdisk.ufs"
+  gzip -5 "${cdroot}/data/ramdisk.ufs"
   rm -rf "${ramdisk_root}"
 }
 
@@ -215,7 +190,7 @@ cleanup()
 workspace
 base
 packages
-ports
+#ports
 rc
 dm
 user
