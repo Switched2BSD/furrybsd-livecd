@@ -1,5 +1,5 @@
-# furybsd-livecd
-LiveCD builder for FuryBSD
+# furrybsd-livecd
+LiveCD builder for FurryBSD
 
 ## Install git required for furybsd-ports
 
