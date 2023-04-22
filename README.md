@@ -1,5 +1,7 @@
 # furrybsd-livecd
 LiveCD builder for FurryBSD
+Dont forget to Subscribe to my Channel on Youtube:
+Switched2BSD
 
 ## Install git required for furybsd-ports
 
