@@ -82,8 +82,9 @@ mkdir ${uzip}/var/cache/pkg
   mount -t devfs devfs ${uzip}/dev
   cat ${cwd}/settings/packages.common | xargs pkg-static -c ${uzip} install -y
   cat ${cwd}/settings/packages.${desktop} | xargs pkg-static -c ${uzip} install -y
+
 # Now it will chroot to our uzip system so we can do whatever we want or build from git
-  chroot ${uzip} 
+#  chroot ${uzip} 
  
  
   rm ${uzip}/etc/resolv.conf
@@ -165,6 +166,11 @@ uzip()
   makefs "${cdroot}/data/system.ufs" "${uzip}"
   mkuzip -o "${cdroot}/data/system.uzip" "${cdroot}/data/system.ufs"
   rm -f "${cdroot}/data/system.ufs"
+  echo "compressed uzip has been created read the filesize and press enter"
+  du -sh ${cdroot}/data/system.uzip
+  du -s ${cdroot}/data/system.uzip
+  read skata
+  
 }
 
 ramdisk() 

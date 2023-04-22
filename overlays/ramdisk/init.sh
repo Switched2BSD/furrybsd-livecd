@@ -22,7 +22,6 @@ done
 echo "==> Mount cdrom"
 mount_cd9660 /dev/iso9660/FURYBSD /cdrom
 mdmfs -P -F /cdrom/data/system.uzip -o ro md.uzip /sysroot
-
 if [ "$SINGLE_USER" = "true" ]; then
 	echo -n "Enter memdisk size used for read-write access in the live system: "
 	read MEMDISK_SIZE
