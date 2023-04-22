@@ -150,7 +150,8 @@ user()
 }
 
 dm()
-      cp ${cwd}/sddm.conf ${uzip}/usr/local/etc/
+{
+cp ${cwd}/sddm.conf ${uzip}/usr/local/etc/
 }
 
 uzip() 
