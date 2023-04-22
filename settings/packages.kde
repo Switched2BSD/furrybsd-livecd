@@ -12,8 +12,6 @@ lxqt-themes
 ark
 featherpad
 networkmgr
-compton
-compton-conf
 octopkg
 fish
 bspwm
@@ -22,3 +20,8 @@ rofi
 dunst
 slock
 spectacle
+Kvantum-qt5
+numlockx
+vlc
+picom
+
