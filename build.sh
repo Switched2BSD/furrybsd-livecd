@@ -53,12 +53,12 @@ base()
 {
   if [ ! -f "${base}/base.txz" ] ; then 
     cd ${base}
-    fetch http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/${version}-RELEASE/base.txz
+    fetch https://download.freebsd.org/releases/amd64/amd64/13.2-RELEASE/base.txz
   fi
   
   if [ ! -f "${base}/kernel.txz" ] ; then
     cd ${base}
-    fetch http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/${version}-RELEASE/kernel.txz
+    fetch https://download.freebsd.org/releases/amd64/amd64/13.2-RELEASE/kernel.txz
   fi
   cd ${base}
   tar -zxvf base.txz -C ${uzip}
