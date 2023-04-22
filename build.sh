@@ -71,6 +71,7 @@ packages()
   cp /etc/resolv.conf ${uzip}/etc/resolv.conf
 #lets copy some stuff like themes icons etc etc
 cp -r /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-usr-local-share-FOLDER/ ${uzip}/usr/local/share/
+mkdir ${uzip}/etc/skel
 mkdir ${uzip}/etc/skel/.config
 cp -r /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-home-dot-config-folder ${uzip}/etc/skel/.config/
 cp /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-root-bin/random-demons.sh ${uzip}/bin/
