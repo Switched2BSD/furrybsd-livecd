@@ -81,6 +81,10 @@ mkdir ${uzip}/var/cache/pkg
   mount -t devfs devfs ${uzip}/dev
   cat ${cwd}/settings/packages.common | xargs pkg-static -c ${uzip} install -y
   cat ${cwd}/settings/packages.${desktop} | xargs pkg-static -c ${uzip} install -y
+# Now it will chroot to our uzip system so we can do whatever we want or build from git
+  chroot ${uzip} 
+ 
+ 
   rm ${uzip}/etc/resolv.conf
   umount ${uzip}/var/cache/pkg
   umount ${uzip}/dev
