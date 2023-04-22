@@ -73,8 +73,8 @@ packages()
 cp -r /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-usr-local-share-FOLDER/ ${uzip}/usr/local/share/
 mkdir ${uzip}/etc/skel
 mkdir ${uzip}/etc/skel/.config
-cp -r /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-home-dot-config-folder/ ${uzip}/etc/skel/.config/
-cp /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-root-bin/ ${uzip}/bin/
+cp -r /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-home-dot-config-folder ${uzip}/etc/skel/.config/
+cp /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-root-bin/random-demons.sh ${uzip}/bin/
 
 
 mkdir ${uzip}/var/cache/pkg
@@ -200,10 +200,6 @@ cleanup()
   fi
 }
 
-workspace
-base
-packages
-#ports
 rc
 dm
 user

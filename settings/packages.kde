@@ -14,6 +14,7 @@ featherpad
 networkmgr
 octopkg
 fish
+alacritty
 bspwm
 sxhkd
 rofi
@@ -28,8 +29,10 @@ virtualbox-ose-additions
 xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel
-xf86-video-qxl
 xf86-video-scfb
 xf86-video-vesa
 xf86-video-vmware
+nvidia-driver
+nvidia-settings
+nvidia-xconfig
 
