@@ -4,6 +4,9 @@
 LIVEFS="/"
 FSMNT="/mnt"
 
+echo " Welcome to the FurryBSD installer"
+echo " Don't forget to Subscribe to my Channel Switched2BSD"
+
 # Clean up any previous runs
 umount -f ${FSMNT}/dev >/dev/null 2>/dev/null || true
 zpool list -H | awk -F '\t' '{print $1;}' | xargs -I % zpool export -f % >/dev/null 2>/dev/null || true
@@ -55,7 +58,9 @@ if [ -f "/usr/local/bin/sddm" ] ; then
 fi
 
 # Cleanup and reboot
-echo "Installation finished!"
+echo "FurryBSD Installation finished!"
+echo "Don't Forget to Subscribe to my YouTube Channel:"
+echo " Switched2BSD  "
 read -p "Press any key to reboot... " -n1 -s
 umount -f ${FSMNT}/dev >/dev/null 2>/dev/null || true
 zpool list -H | awk -F '\t' '{print $1;}' | xargs -I % zpool export -f % >/dev/null 2>/dev/null || true
