@@ -69,7 +69,14 @@ base()
 packages()
 {
   cp /etc/resolv.conf ${uzip}/etc/resolv.conf
-  mkdir ${uzip}/var/cache/pkg
+#lets copy some stuff like themes icons etc etc
+cp -r /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-usr-local-share-FOLDER/ ${uzip}/usr/local/share/
+mkdir ${uzip}/etc/skel/.config
+cp -r /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-home-dot-config-folder ${uzip}/etc/skel/.config/
+cp /home/chris/Downloads/BSPWM-UtterlyNord-Transp-FreeBSD/for-the-root-bin/random-demons.sh ${uzip}/bin/
+
+
+mkdir ${uzip}/var/cache/pkg
   mount_nullfs ${packages} ${uzip}/var/cache/pkg
   mount -t devfs devfs ${uzip}/dev
   cat ${cwd}/settings/packages.common | xargs pkg-static -c ${uzip} install -y
@@ -135,7 +142,7 @@ user()
   chroot ${uzip} echo furybsd | chroot ${uzip} pw mod user root -h 0
   chroot ${uzip} pw useradd liveuser -u 1000 \
   -c "Live User" -d "/home/liveuser" \
-  -g wheel -G operator -m -s /bin/csh -k /usr/share/skel -w none
+  -g wheel -G operator -m -s /usr/local/bin/fish -k /usr/share/skel -w none
   chroot ${uzip} pw groupadd liveuser -g 1000
   chroot ${uzip} echo furybsd | chroot ${uzip} pw mod user liveuser -h 0
   chroot ${uzip} chown -R 1000:1000 /usr/home/liveuser
